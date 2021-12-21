@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.csproj", "{89758026-5877-3bbe-63f6-99f532472fd5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{0fd0a4d4-c634-53fc-17e6-26cdeaad1f1e}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Mathematics", "Unity.Mathematics.csproj", "{ac495276-8560-ea2a-75af-0e8d3e522722}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Animation.Triangle.Runtime", "Unity.2D.Animation.Triangle.Runtime.csproj", "{6e9d7ee3-616c-2b1c-7bf6-292bc3ffe3a9}"
@@ -76,6 +78,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{89758026-5877-3bbe-63f6-99f532472fd5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{89758026-5877-3bbe-63f6-99f532472fd5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0fd0a4d4-c634-53fc-17e6-26cdeaad1f1e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0fd0a4d4-c634-53fc-17e6-26cdeaad1f1e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ac495276-8560-ea2a-75af-0e8d3e522722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ac495276-8560-ea2a-75af-0e8d3e522722}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6e9d7ee3-616c-2b1c-7bf6-292bc3ffe3a9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
