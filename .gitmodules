@@ -1,0 +1,3 @@
+[submodule "rpg-inventory-system/submodules/yebois_framework"]
+	path = rpg-inventory-system/submodules/yebois_framework
+	url = https://github.com/marktoledoDEV/yebois_framework
