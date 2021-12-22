@@ -40,6 +40,7 @@
      <None Include="Assets\Admurin&apos;s 3750+ Pixel Items\PixelItems\Fishing\Spritesheets\Fish Names.txt" />
      <None Include="Assets\Admurin&apos;s 3750+ Pixel Items\PixelItems\Aviary\Birds.txt" />
      <None Include="Assets\Admurin&apos;s 3750+ Pixel Items\PixelItems\Fruits\Spritesheet\Fruits.txt" />
+     <None Include="Assets\Dark_Brown_GUI_kit\Dark_Brown_GUI_kit.txt" />
      <None Include="Assets\Admurin&apos;s 3750+ Pixel Items\PixelItems\Insects\Spritesheets\Insect Names.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
