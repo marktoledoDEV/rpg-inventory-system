@@ -6,7 +6,11 @@ using UnityEngine;
 public class ItemData : ScriptableObject 
 {
     [SerializeField]
-    private Texture _itemImage;
+    private Sprite _itemImage;
+    public Sprite ItemImage 
+    {
+        get { return _itemImage; }
+    }
 
     [SerializeField]
     private string _itemName;

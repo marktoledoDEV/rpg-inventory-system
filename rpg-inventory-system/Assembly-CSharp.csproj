@@ -40,6 +40,7 @@
      <Compile Include="Assets\Admurin&apos;s 3750+ Pixel Items\ReadMe.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\InventoryGridSlot.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\InventoryGridSystem.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\InventorySlotImage.cs" />
      <None Include="Assets\Admurin&apos;s 3750+ Pixel Items\PixelItems\Fishing\Spritesheets\Fish Names.txt" />
      <None Include="Assets\Admurin&apos;s 3750+ Pixel Items\PixelItems\Aviary\Birds.txt" />
      <None Include="Assets\Admurin&apos;s 3750+ Pixel Items\PixelItems\Fruits\Spritesheet\Fruits.txt" />
