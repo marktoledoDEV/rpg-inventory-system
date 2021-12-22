@@ -528,7 +528,8 @@ RectTransform:
   m_Children:
   - {fileID: 2625712314564358294}
   - {fileID: 2627835755102850828}
-  - {fileID: 1339540351}
+  - {fileID: 5489588267930096414}
+  - {fileID: 4966985471527730971}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -844,7 +845,7 @@ MonoBehaviour:
   m_StartAxis: 0
   m_CellSize: {x: 41, y: 41}
   m_Spacing: {x: 0, y: 0}
-  m_Constraint: 1
+  m_Constraint: 2
   m_ConstraintCount: 10
 --- !u!114 &1945253797
 MonoBehaviour:
@@ -862,7 +863,37 @@ MonoBehaviour:
   mMaxRows: 10
   mMaxColumn: 9
   mTestData: {fileID: 11400000, guid: 2141ed58ee71b8940bd54c0f652cbac2, type: 2}
---- !u!1001 &8985635686728081184
+--- !u!1 &5613589641672712009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5489588267930096414}
+  m_Layer: 0
+  m_Name: Dependencies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5489588267930096414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5613589641672712009}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2627362176995769684}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4061440872501764932
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -883,7 +914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8985635687916624991, guid: c272dc6745c01804d85913629033c7b6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8985635687916624991, guid: c272dc6745c01804d85913629033c7b6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -967,8 +998,8 @@ PrefabInstance:
       objectReference: {fileID: 2809424475652968214}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c272dc6745c01804d85913629033c7b6, type: 3}
---- !u!224 &1339540351 stripped
+--- !u!224 &4966985471527730971 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8985635687916624991, guid: c272dc6745c01804d85913629033c7b6, type: 3}
-  m_PrefabInstance: {fileID: 8985635686728081184}
+  m_PrefabInstance: {fileID: 4061440872501764932}
   m_PrefabAsset: {fileID: 0}
