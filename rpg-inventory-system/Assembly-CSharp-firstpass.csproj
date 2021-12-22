@@ -39,6 +39,8 @@
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuCanvasGroup.cs" />
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\UI\Buttons\UIStateChangeBoisButton.cs" />
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuState.cs" />
+     <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\UI\Input\AbstractMouseInputListener.cs" />
+     <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\UI\BoisUIMouseHandler.cs" />
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\BoisMessenger\BoisMessenger.cs" />
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\UI\Buttons\BoisButton.cs" />
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\StateMachine\State.cs" />
@@ -46,11 +48,9 @@
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\UI\BoisUIFlowController.cs" />
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\BoisMessenger\BoisMessengerManager.cs" />
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\BoisMessenger\AbstractMonoBoisComponent.cs" />
+     <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\UI\Input\BoisMessageKeyBinding.cs" />
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\BoisMessenger\IBoisListener.cs" />
      <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuStateMachine.cs" />
-     <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\UI\BoisUIMouseHandler.cs" />
-     <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\UI\Input\BoisMessageKeyBinding.cs" />
-     <Compile Include="Assets\Plugins\yebois_framework\Assets\YeBoisFramework\Scripts\UI\Input\AbstractMouseInputListener.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
