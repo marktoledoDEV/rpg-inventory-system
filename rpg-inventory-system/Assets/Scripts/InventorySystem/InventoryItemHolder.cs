@@ -37,7 +37,7 @@ public class InventoryItemHolder : AbstractMouseInputListener
 
     private void onItemDeselected(object o) {
         GameObject go = o as GameObject;
-        if(go == null) {
+        if(go == null || mSelectedInventorySlot == null) {
             return;
         }
         //[TODO] make the item swap here
