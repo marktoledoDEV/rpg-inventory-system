@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3827220003629091154}
   - component: {fileID: 4903747796288333196}
   - component: {fileID: 7222728592409346799}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: ItemSlot
   m_TagString: mouseDetectable
   m_Icon: {fileID: 0}
@@ -34,10 +34,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 277, y: 383.5}
-  m_SizeDelta: {x: 41, y: 41}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -111, y: 601.5}
+  m_SizeDelta: {x: -735, y: -395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3827220003629091154
 CanvasRenderer:
@@ -182,6 +182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mImage: {fileID: 0}
-  mDefaultImage: {fileID: 0}
   mItemAddedMsg: itemAdded
   mItemRemovedMsg: itemRemoved
+  mInventory: {fileID: 0}

@@ -8,15 +8,19 @@ using YeBoisFramework.BoisMessaging;
 public class InventorySlotImage : AbstractMonoBoisComponent
 {
     [SerializeField] private Image mImage;
-    [SerializeField] private Sprite  mDefaultImage;
 
+    [Header("Bois Messagenger Properties")]
     [SerializeField] private string mItemAddedMsg = "";
     [SerializeField] private string mItemRemovedMsg = "";
+
+    [Header("Dependencies")]
+    [SerializeField] private InventoryGridSystem mInventory;
 
     protected override void Awake() {
         base.Awake();
 
         mImage = GetComponent<Image>();
+        applyImage(null, true);
         CacheMethod(mItemAddedMsg, onItemAdded);
         CacheMethod(mItemRemovedMsg, onItemRemoved);
     }

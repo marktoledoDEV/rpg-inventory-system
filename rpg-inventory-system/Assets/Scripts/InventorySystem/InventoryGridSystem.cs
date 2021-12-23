@@ -26,6 +26,22 @@ public class InventoryGridSystem : MonoBehaviour
     }
 
     private void Update() {
+        DebugTestCode();
+    }
+
+    private void setupGrid() {
+        for(int row = 0; row < mMaxRows; row++) {
+            List<InventoryGridSlot> rowSlots = new List<InventoryGridSlot>(); 
+            for(int column = 0; column < mMaxColumn; column++) {
+                InventoryGridSlot slot = Instantiate(mDefaultSlotPrefab, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+                slot.gameObject.name = "ItemSlotRow" + row + "Column" + column;
+                rowSlots.Add(slot);
+            }
+            _gridData.Add(rowSlots);
+        }
+    }
+
+    private void DebugTestCode() {
         if(Input.GetKeyDown(KeyCode.A)){
             System.Random rnd = new System.Random();
             rngRow = rnd.Next(mMaxRows);
@@ -39,18 +55,6 @@ public class InventoryGridSystem : MonoBehaviour
                 _gridData[rngRow][rngColumn].RemoveItemFromSlot();
                 Debug.Log("Item Removed to Slot " + rngRow + "x" + rngColumn);
             }
-        }
-    }
-
-    private void setupGrid() {
-        for(int row = 0; row < mMaxRows; row++) {
-            List<InventoryGridSlot> rowSlots = new List<InventoryGridSlot>(); 
-            for(int column = 0; column < mMaxColumn; column++) {
-                InventoryGridSlot slot = Instantiate(mDefaultSlotPrefab, gameObject.transform.position, Quaternion.identity, gameObject.transform);
-                slot.gameObject.name = "ItemSlotRow" + row + "Column" + column;
-                rowSlots.Add(slot);
-            }
-            _gridData.Add(rowSlots);
         }
     }
 }
