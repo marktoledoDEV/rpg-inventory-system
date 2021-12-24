@@ -837,9 +837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mDefaultSlotPrefab: {fileID: 7222728592409346799, guid: 5971598ee90d95642967827a092305d6, type: 3}
-  mMaxRows: 10
-  mMaxColumn: 9
-  mTestData: {fileID: 11400000, guid: 2141ed58ee71b8940bd54c0f652cbac2, type: 2}
+  mOnInventoryChangedMessage: inventoryChanged
 --- !u!222 &3944909326214092123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -901,7 +899,7 @@ MonoBehaviour:
   columns: 10
   rows: 9
   spacing: {x: 0, y: 0}
-  cellSize: {x: 50.33196, y: 49.984818}
+  cellSize: {x: 50.399696, y: 49.942463}
   fitX: 1
   fitY: 1
   NudgeLastItemsOver: 0

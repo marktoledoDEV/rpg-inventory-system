@@ -1,10 +1,15 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YeBoisFramework.BoisMessaging;
+using YeBoisFramework.SaveLoad;
+using YeBoisFramework.UI;
 using YeBoisFramework.Utility;
 
-public class InventoryGridSystem : MonoBehaviour
+[RequireComponent(typeof(FlexibleGridLayout))]
+public class InventoryGridSystem : AbstractMonoBoisComponent, ISaveLoadEntity
 {
     private List<List<InventoryGridSlot>> _gridData = new List<List<InventoryGridSlot>>();
     public List<List<InventoryGridSlot>> GridData {
@@ -14,20 +19,27 @@ public class InventoryGridSystem : MonoBehaviour
     [Header("Default Data")]
     [SerializeField] private InventoryGridSlot mDefaultSlotPrefab;
 
-    [SerializeField] private int mMaxRows = 10;
-    [SerializeField] private int mMaxColumn = 9;
+    [Header("Bois Message")]
+    [SerializeField] private string mOnInventoryChangedMessage;
 
     //Dependencies
     private ItemRegistry mItemRegistry;
+    private FlexibleGridLayout mGridLayout;
     
     //Properties are for testing
     private int rngRow = 0;
     private int rngColumn = 0;
 
-    private void Awake() {
-        setupGrid();
+    protected override void Awake() {
+        base.Awake();
         
         mItemRegistry = ServiceLocator.Instance.GetService<ItemRegistry>();
+        mGridLayout = GetComponent<FlexibleGridLayout>();
+
+        CacheMethod(mOnInventoryChangedMessage, OnInventorySave);
+        
+        setupGrid();
+        OnLoad();
     }
 
     private void Update() {
@@ -35,11 +47,11 @@ public class InventoryGridSystem : MonoBehaviour
     }
 
     private void setupGrid() {
-        for(int row = 0; row < mMaxRows; row++) {
+        for(int row = 0; row < mGridLayout.rows; row++) {
             List<InventoryGridSlot> rowSlots = new List<InventoryGridSlot>(); 
-            for(int column = 0; column < mMaxColumn; column++) {
+            for(int column = 0; column < mGridLayout.columns; column++) {
                 InventoryGridSlot slot = Instantiate(mDefaultSlotPrefab, gameObject.transform.position, Quaternion.identity, gameObject.transform);
-                slot.gameObject.name = "ItemSlotRow" + row + "Column" + column;
+                slot.Initialize("ItemSlotRow" + row + "Column" + column, this, mOnInventoryChangedMessage);
                 rowSlots.Add(slot);
             }
             _gridData.Add(rowSlots);
@@ -55,8 +67,8 @@ public class InventoryGridSystem : MonoBehaviour
             ItemData data = mItemRegistry.GetItem(allItemIDs[rngIndex]);
             bool itemPlaced = false;
             while(!itemPlaced) {
-                rngRow = rnd.Next(mMaxRows);
-                rngColumn = rnd.Next(mMaxColumn);
+                rngRow = rnd.Next(mGridLayout.rows);
+                rngColumn = rnd.Next(mGridLayout.columns);
                 InventoryGridSlot slot = _gridData[rngRow][rngColumn];
                 if(!slot.isSlotOccupied) {
                     slot.AddItemToSlot(data);
@@ -64,6 +76,50 @@ public class InventoryGridSystem : MonoBehaviour
                 }
             }
             Debug.Log("Item [" + data.ItemID + "] Added to Slot " + rngRow + "x" + rngColumn);
+        }
+    }
+
+    //Bois Message
+    private void OnInventorySave(object o) {
+        OnSave();
+    }
+
+    //Save Load Entity Functions
+    public string SaveLoadName() {
+        return "inventory";
+    }
+
+    public void OnSave() {
+        //turn the entire inventory into json
+        SerializedInventory inventory = new SerializedInventory();
+        inventory.inventory = new List<SerializedItemData>();
+        for(int row = 0; row < mGridLayout.rows; row++) {
+            for(int column = 0; column < mGridLayout.columns; column++) {
+                InventoryGridSlot slot = _gridData[row][column];
+                if(slot.isSlotOccupied) {
+                    SerializedItemData item = new SerializedItemData();
+                    item.item_id = slot.InventoryItemData.ItemID;
+                    item.rowPosition = row;
+                    item.columnPosition = column;
+                    inventory.inventory.Add(item);
+                }
+            }
+        }
+        string output = JsonConvert.SerializeObject(inventory);
+
+        //save output to json file
+        SaveLoadService saveLoadService = ServiceLocator.Instance.GetService<SaveLoadService>();
+        saveLoadService.OnSerialize(SaveLoadName(), SaveLoadService.FileType.JSON, output);
+    }
+
+    public void OnLoad() {
+        SaveLoadService saveLoadService = ServiceLocator.Instance.GetService<SaveLoadService>();
+        string output = saveLoadService.OnDeSerialize(SaveLoadName(), SaveLoadService.FileType.JSON);
+        
+        ItemRegistry itemRegistry = ServiceLocator.Instance.GetService<ItemRegistry>();
+        SerializedInventory deserializedInventory = JsonConvert.DeserializeObject<SerializedInventory>(output);
+        foreach(SerializedItemData item in deserializedInventory.inventory) {
+            _gridData[item.rowPosition][item.columnPosition].AddItemToSlotWithoutSaving(itemRegistry.GetItem(item.item_id));
         }
     }
 }
