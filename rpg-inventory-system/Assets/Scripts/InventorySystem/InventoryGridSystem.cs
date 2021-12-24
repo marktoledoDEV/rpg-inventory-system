@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YeBoisFramework.Utility;
 
 public class InventoryGridSystem : MonoBehaviour
 {
@@ -15,14 +16,18 @@ public class InventoryGridSystem : MonoBehaviour
 
     [SerializeField] private int mMaxRows = 10;
     [SerializeField] private int mMaxColumn = 9;
+
+    //Dependencies
+    private ItemRegistry mItemRegistry;
     
-    [Header("Test")]
-    [SerializeField] private ItemData mTestData;
+    //Properties are for testing
     private int rngRow = 0;
     private int rngColumn = 0;
 
     private void Awake() {
         setupGrid();
+        
+        mItemRegistry = ServiceLocator.Instance.GetService<ItemRegistry>();
     }
 
     private void Update() {
@@ -44,17 +49,21 @@ public class InventoryGridSystem : MonoBehaviour
     private void DebugTestCode() {
         if(Input.GetKeyDown(KeyCode.A)){
             System.Random rnd = new System.Random();
-            rngRow = rnd.Next(mMaxRows);
-            rngColumn = rnd.Next(mMaxColumn);
-            _gridData[rngRow][rngColumn].AddItemToSlot(mTestData);
-            Debug.Log("Item Added to Slot " + rngRow + "x" + rngColumn);
-        }
-
-        if(Input.GetKeyDown(KeyCode.R)) {
-            if(_gridData[rngRow][rngColumn].isSlotOccupied) {
-                _gridData[rngRow][rngColumn].RemoveItemFromSlot();
-                Debug.Log("Item Removed to Slot " + rngRow + "x" + rngColumn);
+            
+            List<string> allItemIDs = mItemRegistry.GetItemIDs();
+            int rngIndex = rnd.Next(allItemIDs.Count);
+            ItemData data = mItemRegistry.GetItem(allItemIDs[rngIndex]);
+            bool itemPlaced = false;
+            while(!itemPlaced) {
+                rngRow = rnd.Next(mMaxRows);
+                rngColumn = rnd.Next(mMaxColumn);
+                InventoryGridSlot slot = _gridData[rngRow][rngColumn];
+                if(!slot.isSlotOccupied) {
+                    slot.AddItemToSlot(data);
+                    itemPlaced = true;
+                }
             }
+            Debug.Log("Item [" + data.ItemID + "] Added to Slot " + rngRow + "x" + rngColumn);
         }
     }
 }
