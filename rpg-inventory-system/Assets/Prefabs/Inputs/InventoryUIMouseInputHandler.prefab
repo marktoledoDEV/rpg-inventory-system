@@ -91,7 +91,8 @@ MonoBehaviour:
   mImage: {fileID: 0}
   mItemAddedMsg: itemAdded
   mItemRemovedMsg: itemRemoved
-  mInventory: {fileID: 0}
+  mItemSlotDisabled: 
+  mDisabledColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5320060619010192339
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +233,7 @@ MonoBehaviour:
   mMouseHandler: {fileID: 5320060619010192173}
   mItemSelectedMsg: itemAdded
   mItemDeselectedMsg: itemRemoved
+  mItemSlotDisabledMsg: itemDisabled
   mMousePressUpMsg: leftMouseUp
   mMousePressDownMsg: leftMouseDown
   mListeners:

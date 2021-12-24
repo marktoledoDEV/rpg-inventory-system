@@ -93,6 +93,7 @@ MonoBehaviour:
   mItemImage: {fileID: 8459316087196633115}
   mItemAddedMsg: itemAdded
   mItemRemovedMsg: itemRemoved
+  mItemSlotDisabled: itemDisabled
 --- !u!1 &8459316087196633115
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,4 +185,5 @@ MonoBehaviour:
   mImage: {fileID: 0}
   mItemAddedMsg: itemAdded
   mItemRemovedMsg: itemRemoved
-  mInventory: {fileID: 0}
+  mItemSlotDisabled: itemDisabled
+  mDisabledColor: {r: 1, g: 1, b: 1, a: 0.50980395}

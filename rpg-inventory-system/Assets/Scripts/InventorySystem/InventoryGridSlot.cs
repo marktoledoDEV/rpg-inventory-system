@@ -14,6 +14,7 @@ public class InventoryGridSlot : AbstractMonoBoisComponent {
     [SerializeField] private GameObject mItemImage;
     [SerializeField] private string mItemAddedMsg = "";
     [SerializeField] private string mItemRemovedMsg= "";
+    [SerializeField] private string mItemSlotDisabled = "";
 
     public bool isSlotOccupied {
         get { return mData != null; }
@@ -29,5 +30,15 @@ public class InventoryGridSlot : AbstractMonoBoisComponent {
         Call(mItemRemovedMsg, mItemImage);
         mData = null;
         return data;
+    }
+
+    protected override void Awake() {
+        base.Awake();
+
+        CacheMethod(mItemSlotDisabled, onItemSlotDisabled);
+    }
+
+    private void onItemSlotDisabled(object o) {
+        Call(mItemSlotDisabled, mItemImage);
     }
 }

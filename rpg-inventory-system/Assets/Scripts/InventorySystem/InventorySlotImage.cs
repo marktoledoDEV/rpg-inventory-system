@@ -12,9 +12,10 @@ public class InventorySlotImage : AbstractMonoBoisComponent
     [Header("Bois Messagenger Properties")]
     [SerializeField] private string mItemAddedMsg = "";
     [SerializeField] private string mItemRemovedMsg = "";
+    [SerializeField] private string mItemSlotDisabled = "";
 
-    [Header("Dependencies")]
-    [SerializeField] private InventoryGridSystem mInventory;
+    [Header("Properties")]
+    [SerializeField] private Color mDisabledColor;
 
     protected override void Awake() {
         base.Awake();
@@ -23,6 +24,7 @@ public class InventorySlotImage : AbstractMonoBoisComponent
         applyImage(null, true);
         CacheMethod(mItemAddedMsg, onItemAdded);
         CacheMethod(mItemRemovedMsg, onItemRemoved);
+        CacheMethod(mItemSlotDisabled, onItemDisabled);
     }
 
     private void onItemAdded(object o) {
@@ -34,6 +36,10 @@ public class InventorySlotImage : AbstractMonoBoisComponent
 
     private void onItemRemoved(object o) {
         applyImage(null, true);
+    }
+
+    private void onItemDisabled(object o) {
+        mImage.color = mDisabledColor;
     }
 
     private void applyImage(Sprite sprite, bool disabled) {

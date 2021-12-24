@@ -9,6 +9,7 @@ public class InventoryItemHolder : AbstractMouseInputListener
     [Header("Bois Messages")]
     [SerializeField] private string mItemSelectedMsg;
     [SerializeField] private string mItemDeselectedMsg;
+    [SerializeField] private string mItemSlotDisabledMsg;
     [SerializeField] private string mMousePressUpMsg;
     [SerializeField] private string mMousePressDownMsg;
     [SerializeField] private List<AbstractMonoBoisComponent> mListeners = new List<AbstractMonoBoisComponent>();
@@ -32,6 +33,7 @@ public class InventoryItemHolder : AbstractMouseInputListener
         if(itemSlot.isSlotOccupied) {
             mSelectedInventorySlot = itemSlot;
             CallToListeners(mItemSelectedMsg, mSelectedInventorySlot.InventoryItemData.ItemImage);
+            Call(mItemSlotDisabledMsg, go);
         }
     }
 
@@ -40,11 +42,14 @@ public class InventoryItemHolder : AbstractMouseInputListener
         if(go == null || mSelectedInventorySlot == null) {
             return;
         }
-        //[TODO] make the item swap here
+
         InventoryGridSlot itemSlot = go.GetComponent<InventoryGridSlot>();
         if(!itemSlot.isSlotOccupied) {
             ItemData itemData = mSelectedInventorySlot.RemoveItemFromSlot();
             itemSlot.AddItemToSlot(itemData);
+        }
+        else {
+            mSelectedInventorySlot.AddItemToSlot(mSelectedInventorySlot.InventoryItemData);
         }
         
         mSelectedInventorySlot = null;
