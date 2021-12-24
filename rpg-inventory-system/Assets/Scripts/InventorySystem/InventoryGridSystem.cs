@@ -115,7 +115,10 @@ public class InventoryGridSystem : AbstractMonoBoisComponent, ISaveLoadEntity
     public void OnLoad() {
         SaveLoadService saveLoadService = ServiceLocator.Instance.GetService<SaveLoadService>();
         string output = saveLoadService.OnDeSerialize(SaveLoadName(), SaveLoadService.FileType.JSON);
-        
+        if(output == "") {
+            return;
+        }
+
         ItemRegistry itemRegistry = ServiceLocator.Instance.GetService<ItemRegistry>();
         SerializedInventory deserializedInventory = JsonConvert.DeserializeObject<SerializedInventory>(output);
         foreach(SerializedItemData item in deserializedInventory.inventory) {
