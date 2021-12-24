@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6398f0bc9931e40994a7d56c181451, type: 3}
+  m_Name: basic_arrows
+  m_EditorClassIdentifier: 
+  _itemID: basic_arrows
+  _itemImage: {fileID: 21300000, guid: 876c89cd3140fe0419fb9c0689b5090c, type: 3}
+  _itemName: Wooden Arrows (Crafted)
+  _itemDescription: These crafted arrows are simple, but dependable. It won't be
+    able to pierce armour very well, but these arrows will end an adventurer's career
+    with one good shot to the knee

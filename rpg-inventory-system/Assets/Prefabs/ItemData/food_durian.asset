@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6398f0bc9931e40994a7d56c181451, type: 3}
+  m_Name: food_durian
+  m_EditorClassIdentifier: 
+  _itemID: food_durian
+  _itemImage: {fileID: 21300000, guid: d8d6c3a35ca44e044a45e97336055dad, type: 3}
+  _itemName: Durian
+  _itemDescription: Infamous for its small. Some people love it, some people hate
+    it. To see which way you fall, how about you give it a try :)
