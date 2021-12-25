@@ -45,6 +45,7 @@
      <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\UI\FlexibleGridLayout.cs" />
      <Compile Include="Assets\Admurin&apos;s 3750+ Pixel Items\ReadMe.cs" />
      <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\Util\DependencyContainer.cs" />
+     <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\SaveLoad\SaveLoadService.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\InventoryItemHolder.cs" />
      <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\UI\Input\AbstractMouseInputListener.cs" />
      <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\UI\BoisUIMouseHandler.cs" />
@@ -59,11 +60,13 @@
      <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\BoisMessenger\BoisMessengerManager.cs" />
      <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\BoisMessenger\AbstractMonoBoisComponent.cs" />
      <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\UI\Input\BoisMessageKeyBinding.cs" />
-     <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\BoisMessenger\IBoisListener.cs" />
-     <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuStateMachine.cs" />
-     <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\SaveLoad\SaveLoadService.cs" />
      <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\SaveLoad\ISaveLoadEntity.cs" />
+     <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Scripts\BoisMessenger\IBoisListener.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\SaveLoad\SerializedItemData.cs" />
+     <Compile Include="Assets\yebois_framework\yebois_framework\Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuStateMachine.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\InventoryItemReader.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\InventoryDetailContainer.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\InventorySlotText.cs" />
      <None Include="Assets\Admurin&apos;s 3750+ Pixel Items\PixelItems\Fishing\Spritesheets\Fish Names.txt" />
      <None Include="Assets\Admurin&apos;s 3750+ Pixel Items\PixelItems\Aviary\Birds.txt" />
      <None Include="Assets\Admurin&apos;s 3750+ Pixel Items\PixelItems\Fruits\Spritesheet\Fruits.txt" />

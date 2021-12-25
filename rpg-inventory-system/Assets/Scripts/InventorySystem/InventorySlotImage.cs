@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using YeBoisFramework.BoisMessaging;
 
-[RequireComponent(typeof(Image))]
 public class InventorySlotImage : AbstractMonoBoisComponent
 {
     [SerializeField] private Image mImage;
@@ -20,7 +19,9 @@ public class InventorySlotImage : AbstractMonoBoisComponent
     protected override void Awake() {
         base.Awake();
 
-        mImage = GetComponent<Image>();
+        if(mImage == null) {
+            mImage = GetComponent<Image>();
+        }
         applyImage(null, true);
         CacheMethod(mItemAddedMsg, onItemAdded);
         CacheMethod(mItemRemovedMsg, onItemRemoved);
